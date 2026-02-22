@@ -1,5 +1,5 @@
 /**
- * Cart Storage Utility Module
+ * Cart Storage Utility Module - Basketly
  * Handles localStorage operations for shopping cart persistence
  */
 

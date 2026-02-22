@@ -33,3 +33,4 @@ Maintainers have the right to remove, edit, or reject comments, commits, code, i
 ## Acknowledgment
 
 By contributing to this project, you agree to follow this Code of Conduct and help maintain a safe and respectful space for everyone.
+

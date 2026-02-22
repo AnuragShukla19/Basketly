@@ -1,4 +1,5 @@
- import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+// Basketly - https://basketly-rho.vercel.app
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { 
   getAuth, 
   GoogleAuthProvider, 
