@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://basketly.vercel.app">
+  <a href="https://basketly-rho.vercel.app">
     <img src="https://vercel.com/button" alt="Open Website">
   </a>
 </p>
