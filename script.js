@@ -22,6 +22,8 @@ import {
   getDoc 
 } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
+// For production: create your own project at https://console.firebase.google.com
+// and replace the config below with your project's credentials.
 const firebaseConfig = {
   apiKey: "AIzaSyDY3U9hO51ZY6f2RLcdQoxPuJTjQn1lZB8",
   authDomain: "quickbasket-dev.firebaseapp.com",
@@ -331,7 +333,7 @@ function initializeCart() {
 // Initialize wishlist from localStorage on startup
 function initializeWishlist() {
   try {
-    const savedWishlist = localStorage.getItem("quickbasket_wishlist");
+    const savedWishlist = localStorage.getItem("basketly_wishlist");
     if (savedWishlist) {
       wishlist = JSON.parse(savedWishlist);
       wishlistCount = wishlist.length;
@@ -351,7 +353,7 @@ function initializeWishlist() {
 // Save wishlist to localStorage
 function saveWishlist() {
   try {
-    localStorage.setItem("quickbasket_wishlist", JSON.stringify(wishlist));
+    localStorage.setItem("basketly_wishlist", JSON.stringify(wishlist));
   } catch (error) {
     console.error("Error saving wishlist to localStorage:", error);
   }
@@ -1018,7 +1020,7 @@ function savePincode(pincode, deliveryInfo) {
       savedAt: Date.now(),
     };
 
-    sessionStorage.setItem("quickbasket_pincode", JSON.stringify(pincodeData));
+    sessionStorage.setItem("basketly_pincode", JSON.stringify(pincodeData));
     updateDeliveryBanner(pincodeData);
 
     // Show success toast
@@ -1035,7 +1037,7 @@ function savePincode(pincode, deliveryInfo) {
  */
 function loadSavedPincode() {
   try {
-    const savedData = sessionStorage.getItem("quickbasket_pincode");
+    const savedData = sessionStorage.getItem("basketly_pincode");
     if (savedData) {
       const pincodeData = JSON.parse(savedData);
 
@@ -1046,7 +1048,7 @@ function loadSavedPincode() {
         updateDeliveryBanner(pincodeData);
       } else {
         // Clear old data
-        sessionStorage.removeItem("quickbasket_pincode");
+        sessionStorage.removeItem("basketly_pincode");
       }
     }
   } catch (error) {
@@ -1088,7 +1090,7 @@ function updateDeliveryBanner(pincodeData) {
  */
 function clearSavedPincode() {
   try {
-    sessionStorage.removeItem("quickbasket_pincode");
+    sessionStorage.removeItem("basketly_pincode");
 
     // Reset banner text
     const deliveryText = document.getElementById("deliveryLocationText");
@@ -1222,7 +1224,7 @@ function updateCartDisplay() {
 
   document.querySelector(
     ".qr-code img"
-  ).src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=QuickBasket-Payment-Total-₹${finalTotal}`;
+  ).src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Basketly-Payment-Total-₹${finalTotal}`;
 
   // Update cart count on header
   const newCartCount = cart.reduce((total, item) => total + item.quantity, 0);
@@ -1621,7 +1623,7 @@ async function placeOrder() {
     successMessage.innerHTML = `
       Your order <strong>${orderId}</strong> has been placed successfully!<br>
       Total Amount: <strong>₹${finalAmount}</strong><br>
-      Your order will be delivered within 30 minutes. Thank you for shopping with QuickBasket!
+      Your order will be delivered within 30 minutes. Thank you for shopping with Basketly!
     `;
 
     document.getElementById("paymentSection").style.display = "none";
@@ -1706,7 +1708,7 @@ function populateProductDetail(product) {
   
   document.getElementById("productDetailRatingValue").textContent = product.rating || 'N/A';
   
-  // Generate random review count for demo
+  // Sample review count (randomized)
   const reviewCount = Math.floor(Math.random() * 500) + 50;
   document.getElementById("productDetailReviews").textContent = `(${reviewCount} reviews)`;
   

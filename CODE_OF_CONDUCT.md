@@ -1,5 +1,7 @@
 # Contributor Code of Conduct
 
+This project (Basketly) is maintained by [Anurag Shukla](https://github.com/AnuragShukla19). By participating, you agree to this Code of Conduct.
+
 ## Our Commitment
 
 We are committed to creating a welcoming and respectful environment for all contributors. Whether you're submitting code, reporting issues, suggesting features, or helping others, your participation should be guided by kindness, clarity, and professionalism.
@@ -22,7 +24,7 @@ We are committed to creating a welcoming and respectful environment for all cont
 
 ## Reporting Issues
 
-If you experience or witness unacceptable behavior, please report it to the repository maintainer directly via GitHub or email. All reports will be handled confidentially and reviewed promptly.
+If you experience or witness unacceptable behavior, please report it to the repository maintainer ([Anurag Shukla](https://github.com/AnuragShukla19)) via GitHub or by opening an issue. All reports will be handled confidentially and reviewed promptly.
 
 ## Enforcement
 
